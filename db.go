@@ -2,11 +2,13 @@ package main
 
 import (
 	"database/sql"
+	"os"
+	"path/filepath"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
-const DBPath = "./cards.db"
+var DBPath = filepath.Join(os.Getenv("HOME"), ".local/share/cards.db")
 
 var db *sql.DB
 
